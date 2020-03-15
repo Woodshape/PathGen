@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #303a52; -fx-border-color: #574b90;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="sample.controllers.ResultController">
+   <children>
+      <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #9e579d; -fx-control-inner-background: #574b90;" />
+   </children>
+</Pane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="5" style="-fx-background-color: #303a52; -fx-border-color: #574b90;" vgap="5" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.toolbar.ToolbarController">
+    <columnConstraints>
+        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+      <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+      <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+    </columnConstraints>
+
+    <Label text="Search:" textFill="#9e579d" GridPane.columnIndex="0" GridPane.rowIndex="0">
+      <tooltip>
+         <Tooltip fx:id="tooltip" />
+      </tooltip></Label>
+
+    <TextField fx:id="searchField" maxWidth="200.0" style="-fx-background-color: #574b90; -fx-border-color: #9e579d; -fx-text-inner-color: #fc85ae;" GridPane.columnIndex="4" />
+   <ChoiceBox fx:id="choiceField" maxWidth="100.0" style="-fx-background-color: #574b90; -fx-border-color: #9e579d; -fx-text-fill: #fc85ae;" GridPane.columnIndex="3" />
+   <Pane maxHeight="25.0" maxWidth="25.0" GridPane.columnIndex="1">
+      <children>
+         <ImageView fx:id="toolTipImage" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@info.png" />
+            </image>
+         </ImageView>
+      </children>
+   </Pane>
+   <Button fx:id="calculateButton" onAction="#calculate" mnemonicParsing="false" style="-fx-background-color: #574b90; -fx-border-color: #9e579d;" text="Calculate!" textFill="#fc85ae" GridPane.columnIndex="6" />
+   <Separator orientation="VERTICAL" style="-fx-background-color: #9e579d; -fx-border-color: #9e579d;" GridPane.columnIndex="5" />
+
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+
+</GridPane>
