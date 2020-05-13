@@ -2,10 +2,7 @@ package sample.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
-import sample.editor.EditorController;
-import sample.list.ListController;
 import sample.model.DataModel;
-import sample.toolbar.ToolbarController;
 
 public class Controller {
     @FXML

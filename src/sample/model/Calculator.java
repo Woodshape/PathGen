@@ -29,7 +29,7 @@ public abstract class Calculator {
                     "Attack: %d\n" +
                     "Dice: %d\n" +
                     "Weapon Damage: %d\n" +
-                    "Bonus Damage: %d",
+                    "Bonus Damage: %d\n",
                     model.getCurrentPlayer().getAttack(),
                     model.getCurrentPlayer().getDamageDice(),
                     model.getCurrentPlayer().getWeaponDamage(),
@@ -51,11 +51,12 @@ public abstract class Calculator {
         result += String.format("%s (CRIT: %s)%n", model.getCurrentCreature().getAC() - model.getCurrentPlayer().getAttack() > 30 ? "CANNOT HIT!" : chanceToHitMonster,
                 chanceToCritMonster);
 
+        float maxDamage = ((model.getCurrentPlayer().getDamageDice() * model.getCurrentPlayer().getWeaponDamage()) + model.getCurrentPlayer().getDamageBonus());
+
         result += "Damage to Monster: \n" + calculateDamage() + " (max "
-                + ((model.getCurrentPlayer().getDamageDice() * model.getCurrentPlayer().getWeaponDamage()) + model.getCurrentPlayer().getDamageBonus()) + ")";
+                + maxDamage + ")";
         result += String.format(" dies in %s (max %s) rounds!%n", Math.round(model.getCurrentCreature().getHP() / calculateDamage()),
-                Math.round((float)model.getCurrentCreature().getHP()
-                        / ((model.getCurrentPlayer().getDamageDice() * model.getCurrentPlayer().getWeaponDamage()) + model.getCurrentPlayer().getDamageBonus())));
+                Math.round((float)model.getCurrentCreature().getHP() / maxDamage));
 
         /*
         result += "\nMONSTER: \n";
